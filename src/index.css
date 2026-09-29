@@ -1,0 +1,87 @@
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-sans/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #0A0B0D;
+    --surface: #111316;
+    --surface-2: #171A1E;
+    --border: #23272D;
+    --text: #E7E9EC;
+    --text-muted: #8A929C;
+    --text-faint: #5B626B;
+    --accent: #D4A017;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  .font-mono, code, kbd, samp {
+    font-family: 'IBM Plex Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0B0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #23272D;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #343A42;
+}
+
+/* MapLibre Styling Tweaks */
+.maplibregl-popup-content {
+  background: #111316 !important;
+  color: #E7E9EC !important;
+  border: 1px solid #23272D !important;
+  border-radius: 6px !important;
+  padding: 8px 12px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
+.maplibregl-popup-anchor-top .maplibregl-popup-tip { border-bottom-color: #23272D !important; }
+.maplibregl-popup-anchor-bottom .maplibregl-popup-tip { border-top-color: #23272D !important; }
+.maplibregl-popup-anchor-left .maplibregl-popup-tip { border-right-color: #23272D !important; }
+.maplibregl-popup-anchor-right .maplibregl-popup-tip { border-left-color: #23272D !important; }
+
+.maplibregl-ctrl-group {
+  background: #111316 !important;
+  border: 1px solid #23272D !important;
+  border-radius: 6px !important;
+}
+.maplibregl-ctrl-group button {
+  border-bottom: 1px solid #23272D !important;
+}
+.maplibregl-ctrl-group button:last-child {
+  border-bottom: none !important;
+}
+.maplibregl-ctrl-icon {
+  filter: invert(0.9);
+}
+
+/* Faint Contours background pattern */
+.bg-contour-pattern {
+  background-image: radial-gradient(#23272D 1px, transparent 1px);
+  background-size: 16px 16px;
+}
